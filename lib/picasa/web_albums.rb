@@ -34,6 +34,7 @@ module Picasa
         attributes[:thumbnail_2] = photo['group'][0]['thumbnail'][1]['url']
         attributes[:thumbnail_3] = photo['group'][0]['thumbnail'][2]['url']
         attributes[:photo] = photo['content']['src']
+        attributes[:all_data] = photo
         photos << attributes
       end if xml['entry']
       { :photos => photos, :slideshow => xml['link'][1]['href'] + "#slideshow" }
